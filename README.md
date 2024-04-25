@@ -27,4 +27,7 @@ O usuário primeiramente seleciona quais as moedas ele deseja converter e ver o 
 - Poderá ser implementado Internacionalização
 - Poderá ser implementado testes unitários
 
-## Licença
+## Imagens da aplicação
+
+![Logo do Projeto](./src/assets/git/appimg.jpg)
+![Logo do Projeto](./src/assets/git/appimg2.jpg)
