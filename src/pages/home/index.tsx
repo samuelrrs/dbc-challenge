@@ -20,14 +20,15 @@ const Home: React.FC = () => {
   const [amountInFromCurrency, setAmountInFromCurrency] =
     useState<boolean>(true);
 
-  let toAmount: number | undefined, fromAmount: number | undefined;
+  let convertedToAmount: number | undefined,
+    convertedFromAmount: number | undefined;
   if (exchangeRate && amount !== undefined) {
     if (amountInFromCurrency) {
-      fromAmount = amount;
-      toAmount = amount * exchangeRate;
+      convertedFromAmount = amount;
+      convertedToAmount = amount * exchangeRate;
     } else {
-      toAmount = amount;
-      fromAmount = amount / exchangeRate;
+      convertedToAmount = amount;
+      convertedFromAmount = amount / exchangeRate;
     }
   }
 
@@ -100,7 +101,7 @@ const Home: React.FC = () => {
 
           <Form
             currenciesList={currencies}
-            amount={fromAmount}
+            amount={convertedFromAmount}
             selectedCurrency={fromCurrency}
             onChangeCurrency={(value: string | undefined) =>
               setFromCurrency(value)
@@ -110,7 +111,7 @@ const Home: React.FC = () => {
           />
           <Form
             currenciesList={currencies}
-            amount={toAmount}
+            amount={convertedToAmount}
             selectedCurrency={toCurrency}
             onChangeCurrency={(value: string | undefined) =>
               setToCurrency(value)
