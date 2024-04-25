@@ -27,7 +27,7 @@ export const styles = {
     display: "flex",
     aliignItems: "center",
     justifyContent: "center",
-    width: "80%",
+    width: "60%",
 
  [theme.breakpoints.down("sm")]: {
       width: "100%",
@@ -40,7 +40,7 @@ export const styles = {
     border: "1px solid",
     borderColor: COLORS.lowOpaqueGrey,
     borderRadius: "5px",
-    width: "65%",
+    width: "45%",
 
     [theme.breakpoints.down("sm")]: {
       width: "100%",
@@ -74,6 +74,10 @@ export const styles = {
     paddingBottom: "20px",
     border: "1px solid",
     borderColor: COLORS.secondaryBlue,
+    [theme.breakpoints.down("md")]: {
+      fontSize: '1.3em',
+
+    }, 
   }, 
   formContainerRender: {
     display: "flex",
