@@ -110,6 +110,9 @@ export const styles = {
     "& .css-1mf6u8l-MuiSvgIcon-root-MuiSelect-icon": {
       fontSize: "3em",
       color: COLORS.primaryBlue,
+      [theme.breakpoints.down("sm")]: {
+        fontSize: "1.5em",
+      }, 
   },
  
   [theme.breakpoints.down("md")]: {
