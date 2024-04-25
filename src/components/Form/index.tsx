@@ -11,10 +11,11 @@ interface Currency {
 
 interface FormProps {
   currenciesList: Currency[];
-  amount: number | undefined; // Alterado para aceitar undefined
+  amount: number | undefined;
   selectedCurrency: string | undefined;
-  onChangeCurrency: (event: React.ChangeEvent<{ value: unknown }>) => void;
+  onChangeCurrency: (value: string | undefined) => void;
   onChangeAmount: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  disabledInput?: boolean;
 }
 
 const Form: React.FC<FormProps> = ({
@@ -23,25 +24,27 @@ const Form: React.FC<FormProps> = ({
   selectedCurrency,
   onChangeCurrency,
   onChangeAmount,
+  disabledInput,
 }) => {
-  const inputValue = amount !== undefined ? formatNumber(amount) : undefined; // Verifica se amount é undefined
+  const inputValue = amount !== undefined ? formatNumber(amount) : "";
 
   return (
     <Grid sx={styles.container}>
       <Grid sx={styles.inputContainer}>
         <Input
           disableUnderline
-          value={inputValue !== undefined ? inputValue : ""}
+          value={inputValue}
           onChange={onChangeAmount}
           fullWidth
           placeholder={lb.COMPONENTS.INPUTS.LABEL}
+          disabled={disabledInput}
         />
         <Grid sx={styles.form__lineDivider} />
 
         <Select
           id="select-currency"
           value={selectedCurrency || ""}
-          onChange={onChangeCurrency}
+          onChange={(event) => onChangeCurrency(event.target.value as string)}
           fullWidth
           displayEmpty
           variant="standard"
