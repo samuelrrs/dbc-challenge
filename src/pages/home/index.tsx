@@ -15,7 +15,8 @@ const Home: React.FC = () => {
   const [fromCurrency, setFromCurrency] = useState<string | undefined>();
   const [toCurrency, setToCurrency] = useState<string | undefined>();
   const [exchangeRate, setExchangeRate] = useState<number | undefined>();
-  const [amount, setAmount] = useState<number>();
+  const [disabled, setDisabled] = useState<boolean>(true);
+  const [amount, setAmount] = useState<number | undefined>();
   const [amountInFromCurrency, setAmountInFromCurrency] =
     useState<boolean>(true);
 
@@ -76,6 +77,10 @@ const Home: React.FC = () => {
     }
   }, [fromCurrency, toCurrency]);
 
+  useEffect(() => {
+    setDisabled(!fromCurrency || !toCurrency);
+  }, [fromCurrency, toCurrency]);
+
   const renderCircles = () => {
     const circles = Array.from({ length: 3 }, (_, index) => (
       <Grid key={index} sx={styles.home__circle} />
@@ -97,19 +102,21 @@ const Home: React.FC = () => {
             currenciesList={currencies}
             amount={fromAmount}
             selectedCurrency={fromCurrency}
-            onChangeCurrency={(e: ChangeEvent<{ value: unknown }>) =>
-              setFromCurrency(e.target.value as string)
+            onChangeCurrency={(value: string | undefined) =>
+              setFromCurrency(value)
             }
             onChangeAmount={handleFromAmountChange}
+            disabledInput={disabled}
           />
           <Form
             currenciesList={currencies}
             amount={toAmount}
             selectedCurrency={toCurrency}
-            onChangeCurrency={(e: ChangeEvent<{ value: unknown }>) =>
-              setToCurrency(e.target.value as string)
+            onChangeCurrency={(value: string | undefined) =>
+              setToCurrency(value)
             }
             onChangeAmount={handleToAmountChange}
+            disabledInput={disabled}
           />
         </Grid>
       </Grid>
