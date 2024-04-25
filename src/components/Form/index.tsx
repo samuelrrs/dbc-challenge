@@ -33,11 +33,15 @@ const Form: React.FC<FormProps> = ({
       <Grid sx={styles.inputContainer}>
         <Input
           disableUnderline
-          value={inputValue}
+          value={inputValue.replace(/[^\d,]/g, "")}
           onChange={onChangeAmount}
           fullWidth
           placeholder={lb.COMPONENTS.INPUTS.LABEL}
           disabled={disabledInput}
+          inputProps={{
+            pattern: "[0-9,]*",
+            inputMode: "numeric",
+          }}
         />
         <Grid sx={styles.form__lineDivider} />
 
