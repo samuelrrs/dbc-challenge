@@ -4,7 +4,6 @@ export const formatNumber = (number: number): string => {
     if (formattedNumber.indexOf('.') !== -1) {
         formattedNumber = formattedNumber.slice(0, formattedNumber.indexOf('.') + 3);
     }
-    // Replace dot with comma if needed
     formattedNumber = formattedNumber.replace('.', ',');
     return formattedNumber;
 };
