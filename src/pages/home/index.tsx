@@ -1,9 +1,9 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
 import { Grid } from "@mui/material";
-import Form from "../../components/Form";
+import React, { ChangeEvent, useEffect, useState } from "react";
+import { getAllCurrencies, getExchangeRate } from "../../api/api";
+import CustomInputs from "../../components/Form";
 import { LABELS as lb } from "../../constants/texts/labels";
 import { styles } from "./styles";
-import { getAllCurrencies, getExchangeRate } from "../../api/api";
 
 interface Currency {
   value: string;
@@ -99,7 +99,7 @@ const Home: React.FC = () => {
         <Grid sx={styles.formContainerRender}>
           <Grid sx={styles.titleFormContainer}>{lb.FORM_TITLE}</Grid>
 
-          <Form
+          <CustomInputs
             currenciesList={currencies}
             amount={convertedFromAmount}
             selectedCurrency={fromCurrency}
@@ -109,7 +109,7 @@ const Home: React.FC = () => {
             onChangeAmount={handleFromAmountChange}
             disabledInput={disabled}
           />
-          <Form
+          <CustomInputs
             currenciesList={currencies}
             amount={convertedToAmount}
             selectedCurrency={toCurrency}

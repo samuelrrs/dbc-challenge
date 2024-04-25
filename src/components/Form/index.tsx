@@ -9,7 +9,7 @@ interface Currency {
   label: string;
 }
 
-interface FormProps {
+interface CustomInputsProps {
   currenciesList: Currency[];
   amount: number | undefined;
   selectedCurrency: string | undefined;
@@ -18,7 +18,7 @@ interface FormProps {
   disabledInput?: boolean;
 }
 
-const Form: React.FC<FormProps> = ({
+const CustomInputs: React.FC<CustomInputsProps> = ({
   currenciesList,
   amount,
   selectedCurrency,
@@ -76,4 +76,4 @@ const Form: React.FC<FormProps> = ({
   );
 };
 
-export default Form;
+export default CustomInputs;
