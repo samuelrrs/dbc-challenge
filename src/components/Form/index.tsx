@@ -63,7 +63,7 @@ const Form: React.FC<FormProps> = ({
           }}
         >
           <MenuItem value="" disabled>
-            {lb.COMPONENTS.INPUTS.LABEL}
+            {lb.COMPONENTS.INPUTS.SELECT_LABEL}
           </MenuItem>
           {currenciesList?.map((option) => (
             <MenuItem key={option.value} value={option.value}>
