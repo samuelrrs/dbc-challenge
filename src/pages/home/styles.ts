@@ -1,4 +1,4 @@
-import { COLORS as cls } from "../../constants/colors/colors";
+import { COLORS  } from "../../constants/colors/colors";
 import theme from "../../styles/theme";
 
 
@@ -20,9 +20,9 @@ export const styles = {
   },
   titleContainer: {
     fontSize: "2em",
-    color: cls.primaryBlue,
+    color: COLORS.primaryBlue,
     borderBottom: "1px solid",
-    borderColor: cls.lowOpaqueGrey,
+    borderColor: COLORS.lowOpaqueGrey,
     paddingBottom: "20px",
     display: "flex",
     aliignItems: "center",
@@ -38,7 +38,7 @@ export const styles = {
   formContainer: {
     marginTop: "70px",
     border: "1px solid",
-    borderColor: cls.lowOpaqueGrey,
+    borderColor: COLORS.lowOpaqueGrey,
     borderRadius: "5px",
     width: "65%",
 
@@ -52,14 +52,14 @@ export const styles = {
     width: "20px",
     height: "20px",
     borderRadius: "50%",
-    backgroundColor: cls.lowPlusOpaqueGrey,
+    backgroundColor: COLORS.lowPlusOpaqueGrey,
    border: "1px solid",
-    borderColor: cls.lowOpaqueGrey,
+    borderColor: COLORS.lowOpaqueGrey,
     padding: "10px",
   },
   formContainerHeader: {
     borderBottom: "1px solid",
-    borderColor: cls.lowOpaqueGrey,
+    borderColor: COLORS.lowOpaqueGrey,
     display: "flex",
     gap: "15px",
     padding: "10px",
@@ -68,12 +68,12 @@ export const styles = {
   },
   titleFormContainer: {
     fontSize: '1.5em',
-    backgroundColor: cls.opaqueBlue,
+    backgroundColor: COLORS.opaqueBlue,
     padding: "15px",
     borderRadius: "5px",  
     paddingBottom: "20px",
     border: "1px solid",
-    borderColor: cls.secondaryBlue,
+    borderColor: COLORS.secondaryBlue,
   }, 
   formContainerRender: {
     display: "flex",
@@ -83,6 +83,9 @@ export const styles = {
     gap: "30px",
     width: "100%",   
     padding: "35px",
+    marginBottom: "10em",
+    
+
 
     "& .css-1x51dt5-MuiInputBase-input-MuiInput-input": {
       padding: "10px",
@@ -92,7 +95,7 @@ export const styles = {
   },
     "& .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon": {
       fontSize: "3em",
-      color: cls.primaryBlue,
+      color: COLORS.primaryBlue,
       [theme.breakpoints.down("md")]: {
         fontSize: "2em",
       }, 
@@ -102,7 +105,7 @@ export const styles = {
   },
     "& .css-1mf6u8l-MuiSvgIcon-root-MuiSelect-icon": {
       fontSize: "3em",
-      color: cls.primaryBlue,
+      color: COLORS.primaryBlue,
   },
  
   [theme.breakpoints.down("md")]: {

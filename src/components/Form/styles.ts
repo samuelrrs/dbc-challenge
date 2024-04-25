@@ -23,12 +23,12 @@ export const styles = {
     padding: "5px",
     width: "100%",   
     alignItems: "center",
-    gap: "15px",
 
   },
   form__lineDivider: {
     borderLeft: "1px solid",
     borderColor: COLORS.lowOpaqueGrey,
     height: "30px",
+    marginRight: "15px",
   }
 }
