@@ -1,4 +1,5 @@
 import { COLORS } from "../../constants/colors/colors";
+import theme from "../../styles/theme";
 
 export const styles = {
     container: {
@@ -30,5 +31,10 @@ export const styles = {
     borderColor: COLORS.lowOpaqueGrey,
     height: "30px",
     marginRight: "15px",
+    [theme.breakpoints.down("sm")]: {
+      marginRight: "5px",
+
+
+    }, 
   }
 }

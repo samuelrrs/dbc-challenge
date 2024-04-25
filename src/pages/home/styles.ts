@@ -29,7 +29,7 @@ export const styles = {
     justifyContent: "center",
     width: "60%",
 
- [theme.breakpoints.down("sm")]: {
+ [theme.breakpoints.down("md")]: {
       width: "100%",
     },
   
@@ -43,6 +43,9 @@ export const styles = {
     width: "45%",
 
     [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
+    [theme.breakpoints.down("md")]: {
       width: "100%",
     },
   }
@@ -100,7 +103,7 @@ export const styles = {
     "& .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon": {
       fontSize: "3em",
       color: COLORS.primaryBlue,
-      [theme.breakpoints.down("md")]: {
+      [theme.breakpoints.down("lg")]: {
         fontSize: "2em",
       }, 
       [theme.breakpoints.down("sm")]: {
